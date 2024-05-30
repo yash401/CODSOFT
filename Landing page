@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Landing Page</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Welcome to My Landing Page</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Discover Our Amazing Products</h2>
+            <p>Find out how our products can change your life.</p>
+            <a href="#" class="cta-button">Shop Now</a>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>We are a company dedicated to providing the best products and services to our customers. Our mission is to enhance your lifestyle with high-quality products and exceptional customer service. We believe in innovation, quality, and customer satisfaction.</p>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service">
+                <h3>Delivery Services</h3>
+             
+                <p>QuickShip</p>
+                <p>ExpressDeliver</p>
+                <p>FastTrack Delivery</p>
+                <p>PrimeDispatch</p>
+            </div>
+            <div class="service">
+                <h3>Gift Services</h3>
+                <p>GiftWrap</p>
+<p>PresentPerfect</p>
+<p>SurpriseSend</p>
+<p>WrapItUp</p>
+            </div>
+            <div class="service">
+                <h3>Sustainability Initiatives</h3>
+                <p>EcoShop</p>
+<p>EcoFriendly</p>
+<p>SustainStore</p>
+<p>GreenChoice</p>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>Why Choose Us?</h2>
+            <div class="feature">
+                <img src="E:\premium-quality2l.jpg" alt="Icon 1">
+                <h3>Quality Products</h3>
+                <p>We provide high-quality products that meet your needs.</p>
+            </div>
+            <div class="feature">
+                <img src="E:\fast delivery.jpg" alt="Icon 2">
+                <h3>Fast Delivery</h3>
+                <p>Get your products delivered to your doorstep quickly.</p>
+            </div>
+            <div class="feature">
+                <img src="E:\24-7-support.png" alt="Icon 3">
+                <h3>24/7 Support</h3>
+                <p>Our team is always here to assist you with any questions or concerns.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy;                                            2024 My Landing Page. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
