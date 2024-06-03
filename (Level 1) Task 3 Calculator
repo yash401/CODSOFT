@@ -1,0 +1,161 @@
+HTML FILE
+............
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button class="btn" data-value="7">7</button>
+            <button class="btn" data-value="8">8</button>
+            <button class="btn" data-value="9">9</button>
+            <button class="btn operator" data-value="/">/</button>
+
+            <button class="btn" data-value="4">4</button>
+            <button class="btn" data-value="5">5</button>
+            <button class="btn" data-value="6">6</button>
+            <button class="btn operator" data-value="*">*</button>
+
+            <button class="btn" data-value="1">1</button>
+            <button class="btn" data-value="2">2</button>
+            <button class="btn" data-value="3">3</button>
+            <button class="btn operator" data-value="-">-</button>
+
+            <button class="btn" data-value="0">0</button>
+            <button class="btn" data-value=".">.</button>
+            <button class="btn operator" data-value="+">+</button>
+            <button class="btn" id="clear">C</button>
+            <button class="btn" id="equals">=</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+CSS FILE
+............
+
+/* styles.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.calculator {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 320px;
+}
+
+.display {
+    background-color: #222;
+    color: #fff;
+    text-align: right;
+    padding: 20px;
+    font-size: 2em;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.btn {
+    padding: 20px;
+    font-size: 1.5em;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #f0f0f0;
+}
+
+.operator {
+    background-color: #ff9500;
+    color: #fff;
+}
+
+.operator:hover {
+    background-color: #ffad42;
+}
+
+JAVASCRIPT FILE
+
+.................
+
+// script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const display = document.getElementById('display');
+    const buttons = document.querySelectorAll('.btn');
+    let currentInput = '0';
+    let previousInput = '';
+    let operator = '';
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const value = button.getAttribute('data-value');
+            if (value) {
+                handleInput(value);
+            } else if (button.id === 'clear') {
+                clearDisplay();
+            } else if (button.id === 'equals') {
+                calculateResult();
+            }
+        });
+    });
+
+    function handleInput(value) {
+        if ('0123456789.'.includes(value)) {
+            if (currentInput === '0') {
+                currentInput = value;
+            } else {
+                currentInput += value;
+            }
+        } else if ('+-*/'.includes(value)) {
+            previousInput = currentInput;
+            currentInput = '0';
+            operator = value;
+        }
+        updateDisplay();
+    }
+
+    function clearDisplay() {
+        currentInput = '0';
+        previousInput = '';
+        operator = '';
+        updateDisplay();
+    }
+
+    function calculateResult() {
+        if (previousInput && currentInput && operator) {
+            const result = eval(`${previousInput} ${operator} ${currentInput}`);
+            currentInput = result.toString();
+            previousInput = '';
+            operator = '';
+            updateDisplay();
+        }
+    }
+
+    function updateDisplay() {
+        display.textContent = currentInput;
+    }
+});
+
